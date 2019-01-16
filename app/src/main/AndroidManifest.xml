@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.gvtech.serviceathome">
+
+    <!-- if you want to load images from the internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- if you want to load images from a file OR from the internet -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/LightTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".activities.SplashScreenActivity"
+            android:label="@string/app_name"
+            android:theme="@style/LightThemeNoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.user.HomeActivity"
+            android:label="@string/app_name"
+            android:theme="@style/LightNoActionBar" />
+        <activity
+            android:name=".activities.WelcomeActivity"
+            android:label="@string/select_theme_title" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:label="@string/login"
+            android:theme="@style/LightThemeNoActionBar" />
+        <activity
+            android:name=".activities.user.ServiceItemActivity"
+            android:parentActivityName=".activities.user.HomeActivity" />
+        <activity
+            android:name=".activities.user.BusinessDetailsActivity"
+            android:label="@string/title_activity_business_details"
+            android:parentActivityName=".activities.user.ServiceItemActivity"
+            android:theme="@style/LightTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.gvtech.serviceathome.activities.user.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".activities.user.AccountActivity"
+            android:label="@string/account_details"
+            android:parentActivityName=".activities.user.HomeActivity" />
+        <activity
+            android:name=".activities.user.SearchProfessionalActivity"
+            android:label="@string/search_professional"
+            android:parentActivityName=".activities.user.HomeActivity" />
+        <activity
+            android:name=".activities.user.BookingHistoryActivity"
+            android:label="@string/booking_history"
+            android:parentActivityName=".activities.user.HomeActivity" />
+        <activity
+            android:name=".activities.user.CalendarActivity"
+            android:label="@string/calendar_events"
+            android:parentActivityName=".activities.user.HomeActivity" />
+        <activity
+            android:name=".activities.professional.ProfessionalHomeActivity"
+            android:label="@string/title_activity_professional_home"
+            android:theme="@style/LightTheme.NoActionBar" />
+        <activity
+            android:name=".activities.professional.ProfAccountDetailsActivity"
+            android:label="@string/account_details"
+            android:parentActivityName=".activities.professional.ProfessionalHomeActivity">
+
+        </activity>
+        <activity
+            android:name=".activities.professional.AddServiceActivity"
+            android:label="@string/services"
+            android:parentActivityName=".activities.professional.ProfessionalHomeActivity">
+
+        </activity>
+        <activity
+            android:name=".activities.professional.AboutActivity"
+            android:label="@string/about_Me"
+            android:parentActivityName=".activities.professional.ProfessionalHomeActivity"
+            android:theme="@style/LightTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".activities.professional.GalleryActivity"
+            android:label="@string/gallery"
+            android:parentActivityName=".activities.professional.ProfessionalHomeActivity">
+
+        </activity>
+    </application>
+
+</manifest>

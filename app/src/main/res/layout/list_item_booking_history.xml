@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/img_service_url"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:layout_weight="0.3"
+            app:riv_corner_radius="5dp"
+            android:src="@drawable/demo_user"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:layout_weight="0.7">
+            <TextView
+                android:id="@+id/txt_booking_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:textSize="18sp"
+                android:padding="2dp"
+                android:text="Demo service"/>
+
+
+            <TextView
+                android:id="@+id/txt_booking_item_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:textSize="18sp"
+                android:padding="2dp"
+                android:text="ID: 52632547895"/>
+            <TextView
+                android:id="@+id/txt_service_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:textSize="18sp"
+                android:padding="2dp"
+                android:text="Time: 15/06/2019"/>
+
+            <TextView
+                android:id="@+id/txt_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:padding="2dp"
+                android:textStyle="bold"
+                android:drawableLeft="@drawable/ic_money"
+                android:text="21.86"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <TextView
+                    android:id="@+id/txt_service_status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:textSize="18sp"
+                    android:padding="2dp"
+                    android:text="Status:"/>
+
+                <TextView
+                    android:id="@+id/txt_status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:textSize="18sp"
+                    android:padding="2dp"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/ic_done_all"
+                    android:text="Completed"/>
+
+            </LinearLayout>
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:numStars="5"
+                android:rating="0"
+                android:stepSize="0.5"
+                android:isIndicator="false"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <!--<ImageView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:scaleType="centerCrop"-->
+            <!--android:layout_weight="0.1"-->
+            <!--android:src="@drawable/ic_right"/>-->
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/riv_service_thumb"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/demo_splash"
+        android:scaleType="centerCrop"
+        app:riv_corner_radius="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txt_service_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Demo service name"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_money"
+            android:drawablePadding="5dp"
+            android:textSize="18sp"
+            android:text="10.36"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_clock"
+            android:drawablePadding="5dp"
+            android:textSize="18sp"
+            android:text="30 min"/>
+    </LinearLayout>
+</LinearLayout>

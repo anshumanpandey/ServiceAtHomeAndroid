@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bodyColorDark"
+        android:padding="10dp"
+        android:text="@string/add_new_service"
+        android:textAlignment="center"
+        android:textColor="@color/textColorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edit_current_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:drawableStart="@drawable/ic_clock"
+        android:textColor="@color/textColorWhite"
+        android:textColorHint="@color/textColorHintWhite"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/duration"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/edit_new_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:drawableStart="@drawable/ic_money"
+        android:textColor="@color/textColorWhite"
+        android:textColorHint="@color/textColorHintWhite"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/price"
+        android:inputType="textPassword" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:background="@drawable/button_bg_theme"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/add"
+            android:textAllCaps="false"
+            android:textColor="@color/whiteWhite" />
+
+        <Button
+            android:id="@+id/btn_no"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:background="@drawable/button_bg_theme"
+            android:text="@string/cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/whiteWhite" />
+    </LinearLayout>
+</LinearLayout>

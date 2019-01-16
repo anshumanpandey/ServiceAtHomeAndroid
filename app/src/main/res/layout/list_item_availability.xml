@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:background="@color/bodyColorWhite"
+    android:layout_marginTop="5dp"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/txt_day"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:textSize="18sp"
+        android:text="service" />
+
+
+    <TextView
+        android:id="@+id/txt_start_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.25"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:text="10.00" />
+    <TextView
+        android:id="@+id/txt_end_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.25"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:text="10.00" />
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:background="@color/bodyColorWhite"
+    android:layout_marginTop="5dp"
+    android:weightSum="1">
+
+    <CheckBox
+        android:id="@+id/chk_service"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.8"
+        android:textSize="18sp"
+        android:text="This is demo service" />
+
+
+    <TextView
+        android:id="@+id/txt_service_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:textSize="18sp"
+        android:text="$ 2.30" />
+</LinearLayout>

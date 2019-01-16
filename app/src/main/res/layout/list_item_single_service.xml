@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/img_service_url"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:layout_weight="0.3"
+            android:src="@drawable/ic_massage"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:layout_weight="0.6">
+            <TextView
+                android:id="@+id/txt_service_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:textSize="18sp"
+                android:padding="2dp"
+                android:text="Demo service"/>
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:numStars="5"
+                android:rating="4.5"
+                android:stepSize="0.1"
+                style="?android:attr/ratingBarStyleSmall"
+                android:isIndicator="false"
+                android:visibility="visible" />
+            <TextView
+                android:id="@+id/txt_service_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:textSize="18sp"
+                android:padding="2dp"
+                android:text="Demo service"/>
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:layout_weight="0.1"
+            android:src="@drawable/ic_right"/>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

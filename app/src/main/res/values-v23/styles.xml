@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="LightTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimaryWhite</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkWhite</item>
+        <item name="colorAccent">@color/colorAccentWhite</item>
+        <!--<item name="android:windowLightStatusBar">true</item>-->
+        <item name="android:titleTextStyle">@style/ActionBar.TitleTextStyle</item>
+        <item name="bodyColorThm">@color/bodyColorWhite</item>
+        <item name="whiteThm">@color/whiteWhite</item>
+        <item name="blackThm">@color/blackWhite</item>
+        <item name="textColorThm">@color/textColorWhite</item>
+        <item name="textColorHintThm">@color/textColorHintWhite</item>
+    </style>
+
+    <style name="BlackTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimaryBlack</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkBlack</item>
+        <item name="colorAccent">@color/colorAccentBlack</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="bodyColorThm">@color/bodyColorBlack</item>
+        <item name="whiteThm">@color/whiteBlack</item>
+        <item name="blackThm">@color/blackBlack</item>
+        <item name="textColorThm">@color/textColorBlack</item>
+        <item name="textColorHintThm">@color/textColorHintBlack</item>
+
+
+    </style>
+</resources>

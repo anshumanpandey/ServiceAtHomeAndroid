@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- WHITE -->
+    <color name="colorPrimaryWhite">#830321</color>
+    <color name="colorPrimaryDarkWhite">#830321</color>
+    <color name="colorPrimaryLightWhite">#ca0433</color>
+    <color name="colorAccentWhite">#830321</color>
+    <color name="blackWhite">#000000</color>
+    <color name="whiteWhite">#FFFFFF</color>
+    <color name="bodyColorWhite">#ecebeb</color>
+    <color name="textColorWhite">#000000</color>
+    <color name="bodyColorDark">#d7d7d7</color>
+    <color name="textColorHintWhite">#b7b7b7</color>
+
+
+    <color name="layoutBgColor">#70000000</color>
+
+    <!-- END WHITE -->
+
+    <!-- BLACK -->
+    <color name="colorPrimaryBlack">#252424</color>
+    <color name="colorPrimaryDarkBlack">#1a1a1a</color>
+    <color name="colorAccentBlack">#ffffff</color>
+    <color name="blackBlack">#000000</color>
+    <color name="whiteBlack">#ffffff</color>
+    <color name="bodyColorBlack">#1a1a1a</color>
+    <color name="textColorBlack">#ffffff</color>
+    <color name="textColorHintBlack">#252424</color>
+    <color name="done">#00FF00</color>
+    <!-- END BLACK-->
+</resources>

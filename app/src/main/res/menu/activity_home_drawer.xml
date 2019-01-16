@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_account_details"
+            android:icon="@drawable/ic_account"
+            android:title="@string/account_details" />
+        <item
+            android:id="@+id/nav_search_professional"
+            android:icon="@drawable/ic_search"
+            android:title="@string/search_professional" />
+        <item
+            android:id="@+id/nav_booking_history"
+            android:icon="@drawable/ic_book"
+            android:title="@string/booking_history" />
+        <item
+            android:id="@+id/nav_calendar_events"
+            android:icon="@drawable/ic_calendar"
+            android:title="@string/calendar_events" />
+    </group>
+
+    <item android:title="@string/action_settings">
+        <menu>
+            <item
+                android:id="@+id/nav_change_pass"
+                android:icon="@drawable/ic_lock_black"
+                android:title="@string/change_pass" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_power"
+                android:title="@string/logout" />
+        </menu>
+    </item>
+
+</menu>

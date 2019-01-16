@@ -1,0 +1,91 @@
+<resources>
+
+    <!-- WHITE THEME -->
+    <style name="LightTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimaryWhite</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkWhite</item>
+        <item name="colorAccent">@color/colorAccentWhite</item>
+        <item name="android:titleTextStyle">@style/ActionBar.TitleTextStyle</item>
+        <item name="bodyColorThm">@color/bodyColorWhite</item>
+        <item name="whiteThm">@color/whiteWhite</item>
+        <item name="blackThm">@color/blackWhite</item>
+        <item name="textColorThm">@color/textColorWhite</item>
+        <item name="textColorHintThm">@color/textColorHintWhite</item>
+        <item name="actionMenuTextColor">@color/blackWhite</item>
+    </style>
+
+    <style name="LightNoActionBar" parent="LightTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+    </style>
+
+    <style name="LightThemeNoActionBar" parent="LightTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="ActionBar.TitleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/textColorWhite</item>
+    </style>
+
+    <style name="Theme_Dialog" parent="Base.Theme.AppCompat.Dialog">
+        <item name="android:windowMinWidthMajor">98%</item>
+        <item name="android:windowMinWidthMinor">98%</item>
+        <item name="colorPrimary">@color/colorPrimaryWhite</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkWhite</item>
+        <item name="colorAccent">@color/colorAccentWhite</item>
+    </style>
+
+    <style name="Theme_loading_Dialog" parent="Base.Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <!-- END WHITE THEME -->
+
+
+    <!-- BLACK THEME -->
+    <style name="BlackTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimaryBlack</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkBlack</item>
+        <item name="colorAccent">@color/colorAccentBlack</item>
+        <item name="bodyColorThm">@color/bodyColorBlack</item>
+        <item name="whiteThm">@color/whiteBlack</item>
+        <item name="blackThm">@color/blackBlack</item>
+        <item name="textColorThm">@color/textColorBlack</item>
+        <item name="textColorHintThm">@color/textColorHintBlack</item>
+
+
+    </style>
+
+    <!-- END BLACK THEME -->
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="PopupOverlayLight" parent="ThemeOverlay.AppCompat.Light">
+
+    </style>
+
+    <style name="PopupOverlayBark" parent="ThemeOverlay.AppCompat.Dark">
+
+    </style>
+
+    <style name="LightTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="LightTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="LightTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>
