@@ -13,13 +13,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.gvtech.serviceathome.R;
+import com.gvtech.serviceathome.activities.professional.ProfessionalHomeActivity;
 import com.gvtech.serviceathome.activities.user.AccountActivity;
 import com.gvtech.serviceathome.activities.user.BookingHistoryActivity;
 import com.gvtech.serviceathome.activities.user.CalendarActivity;
@@ -27,8 +31,25 @@ import com.gvtech.serviceathome.activities.user.SearchProfessionalActivity;
 import com.gvtech.serviceathome.adapters.ServiceAdapter;
 import com.gvtech.serviceathome.data.LoadData;
 import com.gvtech.serviceathome.dialogs.ChangePasswordDialog;
+import com.gvtech.serviceathome.dialogs.LoaderDialog;
+import com.gvtech.serviceathome.models.CustomerHomeModel;
+import com.gvtech.serviceathome.models.postModel.UserLoginResponseModel;
+import com.gvtech.serviceathome.service.ApiClient.ApiClient;
+import com.gvtech.serviceathome.service.ApiInterface.ApiInterface;
+import com.gvtech.serviceathome.utils.Constants;
+import com.gvtech.serviceathome.utils.SharedStore;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.List;
+
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
@@ -37,6 +58,9 @@ public class HomeActivity extends AppCompatActivity
     private SliderLayout mSlider;
     private RecyclerView recyclerService;
     private ServiceAdapter serviceAdapter;
+    private CompositeDisposable disposable = new CompositeDisposable();
+    private ApiInterface apiService;
+    private LoaderDialog loaderDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,15 +73,8 @@ public class HomeActivity extends AppCompatActivity
         mSlider = (SliderLayout)findViewById(R.id.slider);
         recyclerService = findViewById(R.id.recycler_service);
 
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+        apiService = ApiClient.getClient().create(ApiInterface.class);
+        loaderDialog = new LoaderDialog(this);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -69,41 +86,35 @@ public class HomeActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        HashMap<String,String> url_maps = new HashMap<String, String>();
-        url_maps.put("Hannibal", "http://static2.hypable.com/wp-content/uploads/2013/12/hannibal-season-2-release-date.jpg");
-        url_maps.put("Big Bang Theory", "https://corporateindiamart.files.wordpress.com/2017/12/advertising-banner-100.jpg");
-        url_maps.put("House of Cards", "http://ornatets.com/images/webdesign/online-banner-advertising.jpg");
-        url_maps.put("Game of Thrones", "https://ps.w.org/adrotate/assets/banner-772x250.jpg");
+//        HashMap<String,String> url_maps = new HashMap<String, String>();
+//        url_maps.put("Hannibal", "http://static2.hypable.com/wp-content/uploads/2013/12/hannibal-season-2-release-date.jpg");
+//        url_maps.put("Big Bang Theory", "https://corporateindiamart.files.wordpress.com/2017/12/advertising-banner-100.jpg");
+//        url_maps.put("House of Cards", "http://ornatets.com/images/webdesign/online-banner-advertising.jpg");
+//        url_maps.put("Game of Thrones", "https://ps.w.org/adrotate/assets/banner-772x250.jpg");
+//
+//        for(String name : url_maps.keySet()){
+//            TextSliderView textSliderView = new TextSliderView(this);
+//            // initialize a SliderLayout
+//            textSliderView
+//                    .description(name)
+//                    .image(url_maps.get(name))
+//                    .setScaleType(BaseSliderView.ScaleType.CenterCrop)
+//                    .setOnSliderClickListener(this);
+//
+//            //add your extra information
+//            textSliderView.bundle(new Bundle());
+//            textSliderView.getBundle()
+//                    .putString("extra",name);
+//
+//            mSlider.addSlider(textSliderView);
+//        }
+//        mSlider.setPresetTransformer(SliderLayout.Transformer.ZoomOutSlide);
+//        mSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
+//        mSlider.setCustomAnimation(new DescriptionAnimation());
+//        mSlider.setDuration(4000);
+//        mSlider.addOnPageChangeListener(this);
 
-        for(String name : url_maps.keySet()){
-            TextSliderView textSliderView = new TextSliderView(this);
-            // initialize a SliderLayout
-            textSliderView
-                    .description(name)
-                    .image(url_maps.get(name))
-                    .setScaleType(BaseSliderView.ScaleType.CenterCrop)
-                    .setOnSliderClickListener(this);
-
-            //add your extra information
-            textSliderView.bundle(new Bundle());
-            textSliderView.getBundle()
-                    .putString("extra",name);
-
-            mSlider.addSlider(textSliderView);
-        }
-        mSlider.setPresetTransformer(SliderLayout.Transformer.ZoomOutSlide);
-        mSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
-        mSlider.setCustomAnimation(new DescriptionAnimation());
-        mSlider.setDuration(4000);
-        mSlider.addOnPageChangeListener(this);
-
-
-        //
-        serviceAdapter = new ServiceAdapter(getApplicationContext(),LoadData.loadServiseData());
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(),3);
-        recyclerService.setLayoutManager(mLayoutManager);
-        recyclerService.setItemAnimator(new DefaultItemAnimator());
-        recyclerService.setAdapter(serviceAdapter);
+        getDashboardRemote();
     }
 
     @Override
@@ -189,5 +200,81 @@ public class HomeActivity extends AppCompatActivity
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+
+
+    private void getDashboardRemote(){
+        loaderDialog.show();
+        apiService.getDashboard(Constants.APP_NAME)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<CustomerHomeModel>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        disposable.add(d);
+                    }
+
+                    @Override
+                    public void onNext(CustomerHomeModel homeResponse) {
+                        if (homeResponse.getResultCode().equals(Constants.RESULT_SUCCESS)){
+
+                            serviceAdapter = new ServiceAdapter(getApplicationContext(),homeResponse.getResultObject().getCategories());
+                            RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(),3);
+                            recyclerService.setLayoutManager(mLayoutManager);
+                            recyclerService.setItemAnimator(new DefaultItemAnimator());
+                            recyclerService.setAdapter(serviceAdapter);
+                            // load home slider
+
+                            List<CustomerHomeModel.Sliders> sliders = homeResponse.getResultObject().getHomeSliders();
+                            HashMap<String,String> url_maps = new HashMap<String, String>();
+                            for (CustomerHomeModel.Sliders s : sliders){
+                                url_maps.put(s.getName(), s.getFileName());
+                            }
+
+                            for(String name : url_maps.keySet()){
+                                TextSliderView textSliderView = new TextSliderView(HomeActivity.this);
+                                // initialize a SliderLayout
+                                textSliderView
+                                        .description(name)
+                                        .image(url_maps.get(name))
+                                        .setScaleType(BaseSliderView.ScaleType.CenterCrop)
+                                        .setOnSliderClickListener(HomeActivity.this);
+
+                                //add your extra information
+                                textSliderView.bundle(new Bundle());
+                                textSliderView.getBundle()
+                                        .putString("extra",name);
+
+                                mSlider.addSlider(textSliderView);
+                            }
+                            mSlider.setPresetTransformer(SliderLayout.Transformer.ZoomOutSlide);
+                            mSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
+                            mSlider.setCustomAnimation(new DescriptionAnimation());
+                            mSlider.setDuration(4000);
+                            mSlider.addOnPageChangeListener(HomeActivity.this);
+
+
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(),homeResponse.getResultMessage(),Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        loaderDialog.dismiss();
+                    }
+                });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        disposable.clear();
     }
 }

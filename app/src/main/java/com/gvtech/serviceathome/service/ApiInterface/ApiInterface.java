@@ -1,6 +1,8 @@
 package com.gvtech.serviceathome.service.ApiInterface;
 
 
+import com.gvtech.serviceathome.models.CustomerHomeModel;
+import com.gvtech.serviceathome.models.ProfessionalServiceModel;
 import com.gvtech.serviceathome.models.postModel.UserLoginResponseModel;
 
 
@@ -47,4 +49,19 @@ public interface ApiInterface {
                                                      @Field("phone") String phone,
                                                      @Field("email") String email,
                                                      @Field("password") String password);
+
+    // get all category list for customer
+    @FormUrlEncoded
+    @Headers({"Content-Type:application/x-www-form-urlencoded"})
+    @POST("getdashboard")
+    Observable<CustomerHomeModel> getDashboard(@Field("application") String application);
+
+    // find professionals by category id
+    @FormUrlEncoded
+    @Headers({"Content-Type:application/x-www-form-urlencoded"})
+    @POST("searchProfessionalByCategory")
+    Observable<ProfessionalServiceModel> searchProfessionalByCategory(@Field("application") String application,
+                                                                      @Field("category") int categoryId,
+                                                                      @Field("pageindex") int pageindex);
+
 }

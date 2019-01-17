@@ -181,4 +181,5 @@
     <string name="err_cpass">Please enter Confirm password.</string>
     <string name="err_pass_not_matched">Confirm password not matched.</string>
     <string name="success_reg">Registration success.</string>
+    <string name="err_busi_name">Please enter business name.</string>
 </resources>

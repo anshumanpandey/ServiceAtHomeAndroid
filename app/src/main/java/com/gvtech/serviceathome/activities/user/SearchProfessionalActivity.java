@@ -19,10 +19,10 @@ public class SearchProfessionalActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.recycler_search_list);
 
-        ServiceItemAdapter serviceAdapter = new ServiceItemAdapter(getApplicationContext(),LoadData.loadServiseItemData());
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(serviceAdapter);
+//        ServiceItemAdapter serviceAdapter = new ServiceItemAdapter(getApplicationContext(),LoadData.loadServiseItemData());
+//        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+//        recyclerView.setLayoutManager(mLayoutManager);
+//        recyclerView.setItemAnimator(new DefaultItemAnimator());
+//        recyclerView.setAdapter(serviceAdapter);
     }
 }

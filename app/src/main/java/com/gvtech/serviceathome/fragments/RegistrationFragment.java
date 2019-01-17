@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -64,6 +65,7 @@ public class RegistrationFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ImageView imgGoBack = view.findViewById(R.id.img_go_back);
+
 
         btnReg = view.findViewById(R.id.btn_reg);
         edtFirstName = view.findViewById(R.id.edt_first_name);

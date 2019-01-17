@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ndroid="http://schemas.android.com/apk/res-auto"
     package="com.gvtech.serviceathome">
 
     <!-- if you want to load images from the internet -->
@@ -37,6 +38,7 @@
         <activity
             android:name=".activities.LoginActivity"
             android:label="@string/login"
+            android:windowSoftInputMode="adjustPan"
             android:theme="@style/LightThemeNoActionBar" />
         <activity
             android:name=".activities.user.ServiceItemActivity"

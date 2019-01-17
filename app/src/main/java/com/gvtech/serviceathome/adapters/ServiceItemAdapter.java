@@ -11,25 +11,29 @@ import android.widget.TextView;
 
 import com.gvtech.serviceathome.R;
 import com.gvtech.serviceathome.activities.user.BusinessDetailsActivity;
+import com.gvtech.serviceathome.models.ProfessionalServiceModel;
 import com.gvtech.serviceathome.models.ServiceItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ServiceItemAdapter extends RecyclerView.Adapter<ServiceItemAdapter.MyViewHolder> {
 
-    private ArrayList<ServiceItem> services;
+    private List<ProfessionalServiceModel.Professional> services;
     private Context mContext;
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView txtName;
+        public TextView txtType;
         public ImageView imgThumb;
 
         public MyViewHolder(View view) {
             super(view);
             txtName = (TextView) view.findViewById(R.id.txt_service_name);
+            txtType = (TextView) view.findViewById(R.id.txt_service_type);
             imgThumb = view.findViewById(R.id.img_service_url);
         }
     }
-    public ServiceItemAdapter(Context context, ArrayList<ServiceItem> services) {
+    public ServiceItemAdapter(Context context, List<ProfessionalServiceModel.Professional> services) {
         this.services = services;
         this.mContext = context;
     }
@@ -44,7 +48,8 @@ public class ServiceItemAdapter extends RecyclerView.Adapter<ServiceItemAdapter.
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.txtName.setText(services.get(position).getName());
+        holder.txtName.setText(services.get(position).getBusinessName());
+        holder.txtType.setText(services.get(position).getWhatYouAre());
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(mContext,BusinessDetailsActivity.class);
