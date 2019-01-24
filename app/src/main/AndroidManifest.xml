@@ -6,7 +6,7 @@
 
     <!-- if you want to load images from the internet -->
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!-- if you want to load images from a file OR from the internet -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -45,7 +45,6 @@
             android:parentActivityName=".activities.user.HomeActivity" />
         <activity
             android:name=".activities.user.BusinessDetailsActivity"
-            android:label="@string/title_activity_business_details"
             android:parentActivityName=".activities.user.ServiceItemActivity"
             android:theme="@style/LightTheme.NoActionBar">
             <meta-data
@@ -96,6 +95,8 @@
             android:parentActivityName=".activities.professional.ProfessionalHomeActivity">
 
         </activity>
+
+        <service android:name=".utils.AppLocationService" />
     </application>
 
 </manifest>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.SearchProfessionalFragment">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cd_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="10dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bodyColorDark"
+                android:padding="10dp"
+                android:text="@string/search_details"
+                android:textAlignment="center"
+                android:textColor="@color/textColorWhite"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="1">
+                <!--<TextView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="0.25"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:text="@string/availability"/>-->
+                <EditText
+                    android:id="@+id/txt_datetime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:editable="false"
+                    android:hint="@string/availability"/>
+                <Button
+                    android:id="@+id/btnDateTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@drawable/layout_border_theme"
+                    android:textAllCaps="false"
+                    android:text="@string/date"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/whiteWhite"
+                    android:drawableLeft="@drawable/ic_date"
+                    />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edt_select_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:hint="@string/select_service"/>
+
+            <EditText
+                android:id="@+id/edt_pincode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="@string/enter_pincode"/>
+            <Button
+                android:id="@+id/btn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="0.4"
+                android:background="@drawable/button_bg_theme"
+                android:text="@string/search"
+                android:drawablePadding="10dp"
+                android:paddingLeft="30dp"
+                android:paddingEnd="50dp"
+                android:textColor="@color/whiteWhite"
+                android:drawableLeft="@drawable/ic_search"
+                android:layout_marginBottom="10dp"
+                />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_service"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@+id/txt_service"
+        android:nestedScrollingEnabled="false"
+        android:scrollbars="vertical" />
+
+    <LinearLayout
+        android:id="@+id/ll_no_item_found"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/no_products_found"/>
+    </LinearLayout>
+
+</RelativeLayout>

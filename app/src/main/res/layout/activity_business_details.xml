@@ -22,20 +22,24 @@
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar">
+
             <ImageView
+                android:id="@+id/img_background"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/demo_splash"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_demo_a" />
+
             <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/riv_profile"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                app:riv_oval="true"
-                app:riv_border_width="2dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/demo_user"
                 app:riv_border_color="@color/bodyColorWhite"
-                android:src="@drawable/demo_splash"
-                android:scaleType="centerCrop"/>
+                app:riv_border_width="2dp"
+                app:riv_oval="true" />
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"

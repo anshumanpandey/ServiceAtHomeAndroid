@@ -3,21 +3,13 @@ package com.gvtech.serviceathome.data;
 import com.gvtech.serviceathome.models.Availability;
 import com.gvtech.serviceathome.models.BusinessService;
 import com.gvtech.serviceathome.models.Gallery;
-import com.gvtech.serviceathome.models.Service;
 import com.gvtech.serviceathome.models.ServiceItem;
 
 import java.util.ArrayList;
 
 public class LoadData {
 
-    public static ArrayList<Service> loadServiseData(){
-        ArrayList<Service> services = new ArrayList<>();
-        for(int i =0; i < 30; i++){
-            Service service = new Service("123"+i,"Demo main service "+i, "https://ps.w.org/adrotate/assets/banner-772x250.jpg");
-            services.add(service);
-        }
-        return services;
-    }
+
     public static ArrayList<ServiceItem> loadServiseItemData(){
         ArrayList<ServiceItem> services = new ArrayList<>();
         for(int i =0; i < 30; i++){

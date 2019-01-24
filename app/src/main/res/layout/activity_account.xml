@@ -15,6 +15,7 @@
         android:padding="10dp">
 
         <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/riv_profile_img"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_margin="15dp"
@@ -22,7 +23,10 @@
             android:src="@drawable/demo_user"
             app:riv_border_color="@color/whiteWhite"
             app:riv_border_width="2dp"
-            app:riv_oval="true" />
+            app:riv_oval="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            />
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
@@ -59,37 +63,27 @@
                         android:text="@string/txt_hint_first_name"
                         android:textSize="16sp" />
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/edt_fname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="Parash"
                         android:textColor="@color/textColorWhite"
                         android:textSize="20sp" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/bodyColorWhite" />
-
-                    <TextView
+                       <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/txt_hint_first_name"
                         android:textSize="16sp" />
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/edt_lname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="Maity"
                         android:textColor="@color/textColorWhite"
                         android:textSize="20sp" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/bodyColorWhite" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -97,18 +91,13 @@
                         android:text="@string/txt_hint_email"
                         android:textSize="16sp" />
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/edt_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="parash@gvtechsolution.com"
                         android:textColor="@color/textColorWhite"
                         android:textSize="20sp" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/bodyColorWhite" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -116,13 +105,24 @@
                         android:text="@string/txt_hint_phone"
                         android:textSize="16sp" />
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/edt_phone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="8001078055"
                         android:textColor="@color/textColorWhite"
                         android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/update_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_bg_theme"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_gravity="end"
+                        android:text="@string/update"
+                        android:textColor="@color/whiteWhite" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -215,46 +215,48 @@
                     <!--</LinearLayout>-->
 
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center"
-                        android:weightSum="1">
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:gravity="center"-->
+                        <!--android:weightSum="1">-->
 
-                        <EditText
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5"
-                            android:focusableInTouchMode="true"
-                            android:hint="@string/txt_hint_pincode" />
+                        <!--<EditText-->
+                            <!--android:id="@+id/edt_pincode"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_weight="0.5"-->
+                            <!--android:focusableInTouchMode="true"-->
+                            <!--android:hint="@string/txt_hint_pincode" />-->
 
-                        <Button
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.3"
-                            android:background="@drawable/button_bg_theme"
-                            android:text="@string/lookup"
-                            android:textColor="@color/whiteWhite" />
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:text="/"
-                            android:layout_weight="0.05"
-                            android:textAlignment="center"
-                            android:textSize="36sp"/>
+                        <!--<Button-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_weight="0.3"-->
+                            <!--android:background="@drawable/button_bg_theme"-->
+                            <!--android:text="@string/lookup"-->
+                            <!--android:textColor="@color/whiteWhite" />-->
+                        <!--<TextView-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:text="/"-->
+                            <!--android:layout_weight="0.05"-->
+                            <!--android:textAlignment="center"-->
+                            <!--android:textSize="36sp"/>-->
 
-                        <ImageButton
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.15"
-                            android:background="@drawable/button_bg_theme"
-                            android:src="@drawable/ic_gps"
-                            android:textColor="@color/whiteWhite" />
+                        <!--<ImageButton-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:layout_weight="0.15"-->
+                            <!--android:background="@drawable/button_bg_theme"-->
+                            <!--android:src="@drawable/ic_gps"-->
+                            <!--android:textColor="@color/whiteWhite" />-->
 
-                    </LinearLayout>
+                    <!--</LinearLayout>-->
 
                     <EditText
+                        android:id="@+id/edt_address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:focusableInTouchMode="true"

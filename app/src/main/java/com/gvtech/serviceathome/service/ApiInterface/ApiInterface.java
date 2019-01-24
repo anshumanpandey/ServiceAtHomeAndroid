@@ -1,8 +1,12 @@
 package com.gvtech.serviceathome.service.ApiInterface;
 
 
+import com.gvtech.serviceathome.models.ChangePasswordModel;
 import com.gvtech.serviceathome.models.CustomerHomeModel;
+import com.gvtech.serviceathome.models.CustomerProfile;
+import com.gvtech.serviceathome.models.ProfessionalDetailsModel;
 import com.gvtech.serviceathome.models.ProfessionalServiceModel;
+import com.gvtech.serviceathome.models.Service;
 import com.gvtech.serviceathome.models.postModel.UserLoginResponseModel;
 
 
@@ -64,4 +68,51 @@ public interface ApiInterface {
                                                                       @Field("category") int categoryId,
                                                                       @Field("pageindex") int pageindex);
 
+    // find professionals details by professional id
+    @FormUrlEncoded
+    @Headers({"Content-Type:application/x-www-form-urlencoded"})
+    @POST("professionaldetail")
+    Observable<ProfessionalDetailsModel> getProfessionalDetail(@Field("application") String application,
+                                                               @Field("professionalid") int professionalid,
+                                                               @Field("userid") int userid);
+
+
+    // get customer account details by user id
+    @FormUrlEncoded
+    @Headers({"Content-Type:application/x-www-form-urlencoded"})
+    @POST("getcustomeraccount")
+    Observable<CustomerProfile> getCustomerAccount(@Field("application") String application,
+                                                   @Field("userid") int userid);
+
+    // update customer account details by user id
+    @FormUrlEncoded
+    @Headers({"Content-Type:application/x-www-form-urlencoded"})
+    @POST("updatecustomeraccount")
+    Observable<CustomerProfile> updatecustomeraccount(@Field("application") String application,
+                                                   @Field("userid") int userid);
+
+    // update customer account details by user id
+    @FormUrlEncoded
+    @Headers({"Content-Type:application/x-www-form-urlencoded"})
+    @POST("getallservices")
+    Observable<Service> getAllServices(@Field("application") String application );
+
+    // search professionals
+    @FormUrlEncoded
+    @Headers({"Content-Type:application/x-www-form-urlencoded"})
+    @POST("searchprofessional")
+    Observable<ProfessionalServiceModel> searchProfessional(@Field("application") String application,
+                                                                      @Field("searchdate") String searchdate,
+                                                                      @Field("service") String service,
+                                                                      @Field("postcode") String postcode,
+                                                                      @Field("pageindex") int pageindex);
+
+    // change user password
+    @FormUrlEncoded
+    @Headers({"Content-Type:application/x-www-form-urlencoded"})
+    @POST("changepassword")
+    Observable<ChangePasswordModel> changePassword(@Field("application") String application,
+                                                   @Field("userid") int userid,
+                                                   @Field("currentpassword") String currentpassword,
+                                                   @Field("newpassword") String newpassword);
 }

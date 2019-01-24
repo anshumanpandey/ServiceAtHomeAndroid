@@ -10,14 +10,16 @@ import android.widget.TextView;
 import com.gvtech.serviceathome.R;
 import com.gvtech.serviceathome.models.Availability;
 import com.gvtech.serviceathome.models.Gallery;
+import com.gvtech.serviceathome.models.ProfessionalDetailsModel;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHolder> {
 
-    private ArrayList<Gallery> services;
+    private List<ProfessionalDetailsModel.Gallery> services;
     private Context mContext;
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public RoundedImageView imageView;
@@ -27,7 +29,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHo
             imageView = (RoundedImageView) view.findViewById(R.id.riv_gallery);
         }
     }
-    public GalleryAdapter(Context context, ArrayList<Gallery> services) {
+    public GalleryAdapter(Context context, List<ProfessionalDetailsModel.Gallery> services) {
         this.services = services;
         this.mContext = context;
     }
@@ -42,8 +44,13 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Picasso.with(mContext).load(services.get(position).getUrl()).into(holder.imageView);
-    }
+
+        String url = services.get(position).getFileName();
+        if (url != null)
+            if (!url.isEmpty()) {
+                Picasso.with(mContext).load(url).placeholder(R.drawable.demo_user).into(holder.imageView);
+            }
+        }
 
     @Override
     public int getItemCount() {

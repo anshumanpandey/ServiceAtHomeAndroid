@@ -43,7 +43,6 @@ dependencies {
     implementation 'com.lijiankun24:shadowlayout:1.0.0'
     implementation 'com.github.dmytrodanylyk.shadow-layout:library:1.0.3'
 
-
     // retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
@@ -61,5 +60,3 @@ dependencies {
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
 
 }
-
-

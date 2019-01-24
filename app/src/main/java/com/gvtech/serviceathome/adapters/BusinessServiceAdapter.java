@@ -10,12 +10,14 @@ import android.widget.TextView;
 
 import com.gvtech.serviceathome.R;
 import com.gvtech.serviceathome.models.BusinessService;
+import com.gvtech.serviceathome.models.ProfessionalDetailsModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BusinessServiceAdapter extends RecyclerView.Adapter<BusinessServiceAdapter.MyViewHolder> {
 
-    private ArrayList<BusinessService> services;
+    private List<ProfessionalDetailsModel.Services> services;
     private Context mContext;
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public CheckBox chkService;
@@ -27,7 +29,7 @@ public class BusinessServiceAdapter extends RecyclerView.Adapter<BusinessService
             price = (TextView)view.findViewById(R.id.txt_service_price);
         }
     }
-    public BusinessServiceAdapter(Context context, ArrayList<BusinessService> services) {
+    public BusinessServiceAdapter(Context context, List<ProfessionalDetailsModel.Services> services) {
         this.services = services;
         this.mContext = context;
     }
@@ -42,7 +44,7 @@ public class BusinessServiceAdapter extends RecyclerView.Adapter<BusinessService
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.chkService.setText(services.get(position).getName());
+        holder.chkService.setText(services.get(position).getServiceName());
         holder.price.setText("$ "+services.get(position).getPrice());
     }
 

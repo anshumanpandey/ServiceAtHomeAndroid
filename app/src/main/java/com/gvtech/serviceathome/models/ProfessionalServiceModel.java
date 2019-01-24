@@ -51,7 +51,7 @@ public class ProfessionalServiceModel {
         @SerializedName("Email")
         private String email;
         @SerializedName("ProfessionalID")
-        private String professionalID;
+        private int professionalID;
         @SerializedName("BusinessName")
         private String businessName;
         @SerializedName("ProfileImage")
@@ -65,7 +65,7 @@ public class ProfessionalServiceModel {
         @SerializedName("RatingCount")
         private int ratingCount;
 
-        public Professional(int ID, String email, String professionalID, String businessName, String profileImage, String coverImage, String whatYouAre, int rating, int ratingCount) {
+        public Professional(int ID, String email, int professionalID, String businessName, String profileImage, String coverImage, String whatYouAre, int rating, int ratingCount) {
             this.ID = ID;
             this.email = email;
             this.professionalID = professionalID;
@@ -93,11 +93,11 @@ public class ProfessionalServiceModel {
             this.email = email;
         }
 
-        public String getProfessionalID() {
+        public int getProfessionalID() {
             return professionalID;
         }
 
-        public void setProfessionalID(String professionalID) {
+        public void setProfessionalID(int professionalID) {
             this.professionalID = professionalID;
         }
 

@@ -17,12 +17,12 @@ public class GalleryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
         RecyclerView recyclerView = findViewById(R.id.recycler_gallery);
-
-        GalleryAdapter galleryAdapter = new GalleryAdapter(getApplicationContext(),LoadData.loadGalleryItemData());
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(),2);
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(galleryAdapter);
+//
+//        GalleryAdapter galleryAdapter = new GalleryAdapter(getApplicationContext(),LoadData.loadGalleryItemData());
+//        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(),2);
+//        recyclerView.setLayoutManager(mLayoutManager);
+//        recyclerView.setItemAnimator(new DefaultItemAnimator());
+//        recyclerView.setAdapter(galleryAdapter);
 
     }
 }

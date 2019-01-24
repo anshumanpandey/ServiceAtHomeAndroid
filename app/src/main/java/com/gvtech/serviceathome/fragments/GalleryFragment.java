@@ -8,20 +8,25 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.gvtech.serviceathome.Listners.TabDataListener;
+import com.gvtech.serviceathome.Listners.TabDataLoad;
 import com.gvtech.serviceathome.R;
+import com.gvtech.serviceathome.activities.user.BusinessDetailsActivity;
 import com.gvtech.serviceathome.adapters.GalleryAdapter;
 import com.gvtech.serviceathome.adapters.ServiceAdapter;
 import com.gvtech.serviceathome.data.LoadData;
+import com.gvtech.serviceathome.models.ProfessionalDetailsModel;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class GalleryFragment extends Fragment {
-
+public class GalleryFragment extends Fragment implements TabDataListener {
+    RecyclerView recyclerView;
 
     public GalleryFragment() {
         // Required empty public constructor
@@ -39,9 +44,19 @@ public class GalleryFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        RecyclerView recyclerView = view.findViewById(R.id.recycler_gallery);
+        recyclerView = view.findViewById(R.id.recycler_gallery);
+        TabDataLoad tabDataLoad = new TabDataLoad(this);
+        ((BusinessDetailsActivity)this.getActivity()).setTabListener(tabDataLoad);
 
-        GalleryAdapter galleryAdapter = new GalleryAdapter(getActivity().getApplicationContext(),LoadData.loadGalleryItemData());
+
+    }
+
+    @Override
+    public void noDataLoad(Object o) {
+
+        Log.d("ssssss","gallery");
+        ProfessionalDetailsModel res = (ProfessionalDetailsModel) o;
+        GalleryAdapter galleryAdapter = new GalleryAdapter(getActivity().getApplicationContext(),res.getResultObject().getGallery());
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity().getApplicationContext(),2);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

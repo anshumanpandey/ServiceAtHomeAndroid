@@ -10,12 +10,16 @@ import com.gvtech.serviceathome.fragments.AvailabilityFragment;
 import com.gvtech.serviceathome.fragments.GalleryFragment;
 import com.gvtech.serviceathome.fragments.ServicesFragment;
 
-public class MyAdapter extends FragmentPagerAdapter {
+public class TabAdapter extends FragmentPagerAdapter {
 
     private Context myContext;
     int totalTabs;
+    ServicesFragment servicesFragment = new ServicesFragment();
+    AvailabilityFragment availabilityFragment = new AvailabilityFragment();
+    GalleryFragment galleryFragment = new GalleryFragment();
+    AboutFragment aboutkFragment = new AboutFragment();
 
-    public MyAdapter(Context context, FragmentManager fm, int totalTabs) {
+    public TabAdapter(Context context, FragmentManager fm, int totalTabs) {
         super(fm);
         myContext = context;
         this.totalTabs = totalTabs;
@@ -26,16 +30,16 @@ public class MyAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                ServicesFragment servicesFragment = new ServicesFragment();
+
                 return servicesFragment;
             case 1:
-                AvailabilityFragment availabilityFragment = new AvailabilityFragment();
+
                 return availabilityFragment;
             case 2:
-                GalleryFragment galleryFragment = new GalleryFragment();
+
                 return galleryFragment;
             case 3:
-                AboutFragment aboutkFragment = new AboutFragment();
+
                 return aboutkFragment;
             default:
                 return null;
@@ -46,4 +50,5 @@ public class MyAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return totalTabs;
     }
+
 }
