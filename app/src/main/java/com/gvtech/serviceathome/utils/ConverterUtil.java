@@ -7,7 +7,7 @@ import com.gvtech.serviceathome.models.UserModel;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ConvarterUtil {
+public class ConverterUtil {
 
     public static UserModel getUserModel(Context context){
         try {
@@ -21,14 +21,16 @@ public class ConvarterUtil {
                     object.getString("Phone"),
                     object.getString("Email"),
                     object.getInt("RoleID"),
-                    object.getString("RoleName")
+                    object.getString("RoleName"),
+                    object.getString("profileImg")
             );
 
             return userModel;
 
         } catch (JSONException e) {
             e.printStackTrace();
+            return null;
         }
-        return null;
+
     }
 }

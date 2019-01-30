@@ -78,13 +78,14 @@ public class SearchProfessionalFragment extends Fragment {
 
         edtSelectService = view.findViewById(R.id.edt_select_service);
         txtDateTime = view.findViewById(R.id.txt_datetime);
-        edtSelectService = view.findViewById(R.id.edt_select_service);
         edtPincode = view.findViewById(R.id.edt_pincode);
         btnDateTime = view.findViewById(R.id.btnDateTime);
         btnSearch = view.findViewById(R.id.btn_search);
         cardView = view.findViewById(R.id.cd_search);
         recyclerView = view.findViewById(R.id.recycler_service);
         llNoItem = view.findViewById(R.id.ll_no_item_found);
+
+
 
         recyclerView.setVisibility(View.GONE);
         cardView.setVisibility(View.VISIBLE);
@@ -125,7 +126,7 @@ public class SearchProfessionalFragment extends Fragment {
                     myCalendar.get(Calendar.DAY_OF_MONTH)).show();
         });
         if(bundle != null){
-            serviceId = bundle.getString("itemId");
+            serviceId = bundle.getInt("itemId")+"";
             serviceName = bundle.getString("itemName");
             serviceDate = bundle.getString("date");
             edtSelectService.setText(serviceName);

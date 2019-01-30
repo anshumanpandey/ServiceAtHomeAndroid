@@ -138,6 +138,10 @@ public class LoginFragment extends Fragment {
                             }
                             try {
                                 UserLoginResponseModel.User u = userResponse.getResultObject().getUser();
+                                String img = "";
+                                if (u.getProfileImage() != null)
+                                    img = u.getProfileImage();
+
                                 JSONObject object = new JSONObject();
                                 object.put("ID",u.getID());
                                 object.put("Email",u.getEmail());
@@ -148,6 +152,7 @@ public class LoginFragment extends Fragment {
                                 object.put("Phone",u.getPhone());
                                 object.put("RoleID",u.getRoleID());
                                 object.put("RoleName",u.getRoleName());
+                                object.put("profileImg",img);
                                 SharedStore.setUserDetails(getActivity().getApplicationContext(),object.toString());
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -165,7 +170,11 @@ public class LoginFragment extends Fragment {
 
                     @Override
                     public void onError(Throwable e) {
-
+                        YoYo.with(Techniques.Tada)
+                                .duration(500)
+                                .playOn(layout);
+                        Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
+                        loaderDialog.dismiss();
                     }
 
                     @Override

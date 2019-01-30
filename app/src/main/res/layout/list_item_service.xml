@@ -29,8 +29,7 @@
             android:maxLines="2"
             android:padding="2dp"
             android:text="Demo main service "
-            android:textAlignment="center"
-            android:textSize="16sp" />
+            android:textAlignment="center" />
     </LinearLayout>
 
 </android.support.v7.widget.CardView>

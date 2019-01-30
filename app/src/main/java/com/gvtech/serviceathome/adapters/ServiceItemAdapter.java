@@ -2,7 +2,6 @@ package com.gvtech.serviceathome.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Rating;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,10 +13,8 @@ import android.widget.TextView;
 import com.gvtech.serviceathome.R;
 import com.gvtech.serviceathome.activities.user.BusinessDetailsActivity;
 import com.gvtech.serviceathome.models.ProfessionalServiceModel;
-import com.gvtech.serviceathome.models.ServiceItem;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ServiceItemAdapter extends RecyclerView.Adapter<ServiceItemAdapter.MyViewHolder> {
@@ -71,6 +68,11 @@ public class ServiceItemAdapter extends RecyclerView.Adapter<ServiceItemAdapter.
             intent.putExtra("userId",professional.getID());
             mContext.startActivity(intent);
         });
+    }
+
+    public void updateItems(List<ProfessionalServiceModel.Professional> professionals){
+        services.addAll(professionals);
+        notifyDataSetChanged();
     }
 
     @Override

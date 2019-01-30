@@ -11,8 +11,9 @@ public class UserModel {
     private String email;
     private int roleId;
     private String roleName;
+    private String profileImg;
 
-    public UserModel(int userId, String pass, String accountNo, String firstName, String lastName, String phone,String email, int roleId, String roleName) {
+    public UserModel(int userId, String pass, String accountNo, String firstName, String lastName, String phone,String email, int roleId, String roleName, String profileImg) {
         this.userId = userId;
         this.pass = pass;
         this.accountNo = accountNo;
@@ -22,6 +23,7 @@ public class UserModel {
         this.email = email;
         this.roleId = roleId;
         this.roleName = roleName;
+        this.profileImg = profileImg;
     }
 
     public int getUserId() {
@@ -94,5 +96,13 @@ public class UserModel {
 
     public void setRoleName(String roleName) {
         this.roleName = roleName;
+    }
+
+    public String getProfileImg() {
+        return profileImg;
+    }
+
+    public void setProfileImg(String profileImg) {
+        this.profileImg = profileImg;
     }
 }

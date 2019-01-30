@@ -12,15 +12,13 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.gvtech.serviceathome.R;
 import com.gvtech.serviceathome.models.ChangePasswordModel;
-import com.gvtech.serviceathome.models.ProfessionalServiceModel;
 import com.gvtech.serviceathome.models.UserModel;
 import com.gvtech.serviceathome.service.ApiClient.ApiClient;
 import com.gvtech.serviceathome.service.ApiInterface.ApiInterface;
 import com.gvtech.serviceathome.utils.Constants;
-import com.gvtech.serviceathome.utils.ConvarterUtil;
+import com.gvtech.serviceathome.utils.ConverterUtil;
 import com.gvtech.serviceathome.utils.SharedStore;
 
-import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -65,7 +63,7 @@ public class ChangePasswordDialog extends Dialog implements
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_submit:
-                UserModel userModel = ConvarterUtil.getUserModel(c.getApplicationContext());
+                UserModel userModel = ConverterUtil.getUserModel(c.getApplicationContext());
                 changePasswordRemote(userModel.getUserId(),edtCurrPass.getText().toString(),edtNewPass.getText().toString());
 
                 break;
@@ -91,7 +89,7 @@ public class ChangePasswordDialog extends Dialog implements
             @Override
             public void onNext(ChangePasswordModel changePasswordModel) {
                 if (changePasswordModel.getResultCode().equals(Constants.RESULT_SUCCESS)){
-                    UserModel userModel = ConvarterUtil.getUserModel(c.getApplicationContext());
+                    UserModel userModel = ConverterUtil.getUserModel(c.getApplicationContext());
                     userModel.setPass(newPass);
                     Gson gson = new Gson();
                     SharedStore.setUserDetails(c.getApplicationContext(),gson.toJson(userModel));
