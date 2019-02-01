@@ -17,7 +17,7 @@ public class TabAdapter extends FragmentPagerAdapter {
     ServicesFragment servicesFragment = new ServicesFragment();
     AvailabilityFragment availabilityFragment = new AvailabilityFragment();
     GalleryFragment galleryFragment = new GalleryFragment();
-    AboutFragment aboutkFragment = new AboutFragment();
+    AboutFragment aboutFragment = new AboutFragment();
 
     public TabAdapter(Context context, FragmentManager fm, int totalTabs) {
         super(fm);
@@ -40,7 +40,7 @@ public class TabAdapter extends FragmentPagerAdapter {
                 return galleryFragment;
             case 3:
 
-                return aboutkFragment;
+                return aboutFragment;
             default:
                 return null;
         }
