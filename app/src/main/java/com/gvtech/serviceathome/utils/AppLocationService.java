@@ -21,6 +21,8 @@ public class AppLocationService extends Service implements LocationListener {
     private static final long MIN_DISTANCE_FOR_UPDATE = 10;
     private static final long MIN_TIME_FOR_UPDATE = 1000 * 60 * 2;
 
+
+
     public AppLocationService(Context context) {
         this.mContext = context;
         locationManager = (LocationManager) context

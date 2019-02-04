@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "983420335021",
+    "firebase_url": "https://sah-app.firebaseio.com",
+    "project_id": "sah-app",
+    "storage_bucket": "sah-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983420335021:android:dce1241083f49c22",
+        "android_client_info": {
+          "package_name": "com.gvtech.serviceathome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "983420335021-d692dca3h1icdidp91pk3vakfns69lg4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATANhMYXeUSBV1K3GLakoI8AbPRBUX1iU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
