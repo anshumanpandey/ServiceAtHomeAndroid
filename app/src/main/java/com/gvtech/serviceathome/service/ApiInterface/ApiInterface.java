@@ -115,4 +115,11 @@ public interface ApiInterface {
                                                    @Field("userid") int userid,
                                                    @Field("currentpassword") String currentpassword,
                                                    @Field("newpassword") String newpassword);
+
+    // change user password
+    @FormUrlEncoded
+    @Headers({"Content-Type:application/x-www-form-urlencoded"})
+    @POST("getprofessionalaccount")
+    Observable<ProfessionalDetailsModel> getProfessionalAccount(@Field("application") String application,
+                                                   @Field("userid") int userid);
 }

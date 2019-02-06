@@ -5,6 +5,10 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_about_me"
+            android:icon="@drawable/ic_user"
+            android:title="@string/about_Me" />
+        <item
             android:id="@+id/nav_account_details"
             android:icon="@drawable/ic_account"
             android:title="@string/account_details" />
@@ -12,10 +16,6 @@
             android:id="@+id/nav_professional_details"
             android:icon="@drawable/ic_business"
             android:title="@string/professional_details" />
-        <item
-            android:id="@+id/nav_about_me"
-            android:icon="@drawable/ic_user"
-            android:title="@string/about_Me" />
         <item
             android:id="@+id/nav_calendar_events"
             android:icon="@drawable/ic_calendar"

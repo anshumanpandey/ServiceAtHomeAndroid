@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activities.professional.ProfAccountDetailsActivity"
-    tools:showIn="@layout/activity_prof_account_details">
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -52,13 +52,14 @@
                         android:text="@string/txt_hint_business_name"
                         android:textSize="16sp" />
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/edt_business_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="Parash Business"
+                        android:inputType="text"
                         android:textColor="@color/textColorWhite"
-                        android:textSize="20sp" />
+                         />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -66,13 +67,14 @@
                         android:text="@string/txt_hint_first_name"
                         android:textSize="16sp" />
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/edt_first_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="Parash"
+                        android:inputType="text"
                         android:textColor="@color/textColorWhite"
-                        android:textSize="20sp" />
+                         />
 
                     <View
                         android:layout_width="match_parent"
@@ -82,16 +84,17 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/txt_hint_first_name"
+                        android:text="@string/txt_hint_last_name"
                         android:textSize="16sp" />
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/edt_last_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="Maity"
+                        android:inputType="text"
                         android:textColor="@color/textColorWhite"
-                        android:textSize="20sp" />
+                         />
 
                     <View
                         android:layout_width="match_parent"
@@ -104,13 +107,14 @@
                         android:text="@string/txt_hint_email"
                         android:textSize="16sp" />
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/edt_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="parash@gvtechsolution.com"
+                        android:inputType="text"
                         android:textColor="@color/textColorWhite"
-                        android:textSize="20sp" />
+                         />
 
                     <View
                         android:layout_width="match_parent"
@@ -123,16 +127,18 @@
                         android:text="@string/txt_hint_phone"
                         android:textSize="16sp" />
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/edt_phone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="8001078055"
+                        android:inputType="number"
                         android:textColor="@color/textColorWhite"
-                        android:textSize="20sp" />
+                         />
                 </LinearLayout>
 
                 <Button
+                    android:id="@+id/btn_update_personal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.3"
@@ -188,13 +194,14 @@
                         android:textSize="16sp" />
 
                     <EditText
+                        android:id="@+id/edt_what_are_you"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
                         android:minLines="2"
-                        android:hint="@string/txt_hint_what_are_you"
+                        android:inputType="text"
                         android:textColor="@color/textColorWhite"
-                        android:textSize="20sp" />
+                         />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -203,14 +210,15 @@
                         android:textSize="16sp" />
 
                     <EditText
+                        android:id="@+id/edt_about_service"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
                         android:minLines="3"
-                        android:hint="@string/txt_hint_about_service"
+                        android:inputType="text"
                         android:textAlignment="textStart"
                         android:textColor="@color/textColorWhite"
-                        android:textSize="20sp" />
+                         />
 
                    <TextView
                         android:layout_width="match_parent"
@@ -219,13 +227,13 @@
                         android:textSize="16sp" />
 
                     <EditText
+                        android:id="@+id/edt_speciality"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:hint="@string/txt_hint_speciality"
                         android:textAlignment="textStart"
                         android:textColor="@color/textColorWhite"
-                        android:textSize="20sp" />
+                         />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -236,6 +244,7 @@
                 </LinearLayout>
 
                 <Button
+                    android:id="@+id/btn_add_work_details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.3"
@@ -292,8 +301,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.7"
-                            android:focusableInTouchMode="true"
-                            android:hint="@string/txt_hint_pincode" />
+                            android:focusableInTouchMode="true" />
 
                         <Button
                             android:layout_width="0dp"
@@ -310,13 +318,13 @@
                         android:text="@string/txt_hint_address_one"
                         android:textSize="16sp" />
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/edt_address_l_one"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="SDF"
                         android:textColor="@color/textColorWhite"
-                        android:textSize="20sp" />
+                         />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -324,13 +332,13 @@
                         android:text="@string/txt_hint_address_two"
                         android:textSize="16sp" />
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/edt_address_l_two"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="Sec v"
                         android:textColor="@color/textColorWhite"
-                        android:textSize="20sp" />
+                         />
 
                     <View
                         android:layout_width="match_parent"
@@ -343,13 +351,13 @@
                         android:text="@string/txt_hint_address_three"
                         android:textSize="16sp" />
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/edt_address_l_three"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="Salt lake"
                         android:textColor="@color/textColorWhite"
-                        android:textSize="20sp" />
+                         />
 
                     <View
                         android:layout_width="match_parent"
@@ -362,13 +370,13 @@
                         android:text="@string/txt_hint_city"
                         android:textSize="16sp" />
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/edt_city"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="Kolkata"
                         android:textColor="@color/textColorWhite"
-                        android:textSize="20sp" />
+                         />
 
                     <View
                         android:layout_width="match_parent"
@@ -381,16 +389,17 @@
                         android:text="@string/txt_hint_state"
                         android:textSize="16sp" />
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/pin_code"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="WB"
                         android:textColor="@color/textColorWhite"
-                        android:textSize="20sp" />
+                         />
                 </LinearLayout>
 
                 <Button
+                    android:id="@+id/btn_update_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.3"
