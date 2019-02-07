@@ -7,18 +7,18 @@
 
 
     <TextView
+        android:id="@+id/txt_service_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/bodyColorDark"
         android:padding="10dp"
-        android:text="@string/add_new_service"
         android:textAlignment="center"
         android:textColor="@color/textColorWhite"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edit_current_pass"
+        android:id="@+id/edt_duration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -28,10 +28,10 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="@string/duration"
-        android:inputType="textPassword" />
+        android:inputType="text" />
 
     <EditText
-        android:id="@+id/edit_new_pass"
+        android:id="@+id/edt_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -41,7 +41,7 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="@string/price"
-        android:inputType="textPassword" />
+        android:inputType="text" />
 
     <LinearLayout
         android:layout_width="match_parent"

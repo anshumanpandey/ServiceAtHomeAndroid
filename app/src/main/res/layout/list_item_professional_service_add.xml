@@ -16,7 +16,7 @@
         android:id="@+id/riv_service_thumb"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:src="@drawable/demo_splash"
+        android:src="@drawable/placeholder"
         android:layout_weight="0.2"
         android:scaleType="centerCrop"
         app:riv_corner_radius="10dp"/>
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_weight="0.7"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:text="Demo service name"/>
 

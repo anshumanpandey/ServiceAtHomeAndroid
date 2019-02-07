@@ -8,17 +8,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.gvtech.serviceathome.Listners.ServiceDataListener;
 import com.gvtech.serviceathome.R;
 import com.gvtech.serviceathome.dialogs.AddServiceDialog;
+import com.gvtech.serviceathome.models.Service;
 import com.gvtech.serviceathome.models.ServiceItem;
 import com.makeramen.roundedimageview.RoundedImageView;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProfessionalServiceAddAdapter extends RecyclerView.Adapter<ProfessionalServiceAddAdapter.MyViewHolder> {
 
-    private ArrayList<ServiceItem> services;
-    private Activity a;
+    private List<Service.ServiceItem> services;
+    private Activity mContext;
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView txtName;
         public RoundedImageView imgThumb;
@@ -29,9 +33,9 @@ public class ProfessionalServiceAddAdapter extends RecyclerView.Adapter<Professi
             imgThumb = view.findViewById(R.id.riv_service_thumb);
         }
     }
-    public ProfessionalServiceAddAdapter(Activity a) {
-//        this.services = services;
-        this.a = a;
+    public ProfessionalServiceAddAdapter(Activity context, List<Service.ServiceItem> services) {
+        this.services = services;
+        this.mContext = context;
     }
 
     @Override
@@ -44,15 +48,21 @@ public class ProfessionalServiceAddAdapter extends RecyclerView.Adapter<Professi
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        //holder.txtName.setText(services.get(position).getName());
+        holder.txtName.setText(services.get(position).getName());
+
+        String url = services.get(position).getExtraInfo();
+        if (url != null)
+        if (!url.isEmpty()){
+            Picasso.with(mContext).load(url).placeholder(R.drawable.placeholder).into(holder.imgThumb);
+        }
 
         holder.itemView.setOnClickListener(v -> {
-            new AddServiceDialog(a).show();
+            new AddServiceDialog(mContext, services.get(position)).show();
         });
     }
 
     @Override
     public int getItemCount() {
-        return 20;
+        return services.size();
     }
 }

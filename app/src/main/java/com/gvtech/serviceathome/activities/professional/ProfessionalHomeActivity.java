@@ -24,6 +24,8 @@ import com.gvtech.serviceathome.models.ProfessionalDetailsModel;
 import com.gvtech.serviceathome.service.ApiClient.ApiClient;
 import com.gvtech.serviceathome.service.ApiInterface.ApiInterface;
 import com.gvtech.serviceathome.utils.Constants;
+import com.gvtech.serviceathome.utils.ConverterUtil;
+import com.gvtech.serviceathome.utils.SharedStore;
 
 import java.util.List;
 
@@ -56,8 +58,7 @@ public class ProfessionalHomeActivity extends AppCompatActivity
             edtPinCode;
     private Button
             btnPerDetails,
-            brnWorkDetails,
-            btnAddressDetails;
+            btnWorkDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -173,9 +174,65 @@ public class ProfessionalHomeActivity extends AppCompatActivity
         edtPinCode = findViewById(R.id.pin_code);
 
         btnPerDetails = findViewById(R.id.btn_update_personal);
-        brnWorkDetails = findViewById(R.id.btn_add_work_details);
-        btnAddressDetails = findViewById(R.id.btn_update_address);
+        btnWorkDetails = findViewById(R.id.btn_add_work_details);
 
+        btnPerDetails.setOnClickListener(v -> {
+            int userid = ConverterUtil.getUserModel(getApplicationContext()).getUserId();
+            String fname = edtFname.getText().toString().trim();
+            String lname = edtLname.getText().toString().trim();
+            String email = edtEmail.getText().toString().trim();
+            String phone = edtPhone.getText().toString().trim();
+            String busName = edtBusName.getText().toString().trim();
+            String addLine1 = edtAddLine1.getText().toString().trim();
+            String addLine2 = edtAddLine2.getText().toString().trim();
+            String addLine3 = edtAddLine3.getText().toString().trim();
+            String city = edtCity.getText().toString().trim();
+            String pincode = edtPinCode.getText().toString().trim();
+            // call api for update
+            updateProfessionalDetails(userid,fname,lname,email,phone,busName,addLine1,addLine2,addLine3,city,pincode);
+        });
+
+        btnWorkDetails.setOnClickListener(v -> {
+
+        });
+
+    }
+
+    private void updateProfessionalDetails(int userid,String fname, String lname, String email, String phone, String busName, String addLine1, String addLine2, String addLine3, String city, String pincode) {
+
+        loaderDialog.show();
+        apiService.updateProfessionalAccount(Constants.APP_NAME,userid,fname,lname,phone,email,addLine1,addLine2,addLine3,city,pincode,"","")
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ProfessionalDetailsModel>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        disposable.add(d);
+                    }
+
+                    @Override
+                    public void onNext(ProfessionalDetailsModel res) {
+                        if (res.getResultCode().equals(Constants.RESULT_SUCCESS)){
+                            loadPersonalUI(res.getResultObject().getProfessionalDetail());
+                            loadPostcodeUI(res.getResultObject().getPostcodes());
+
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(),res.getResultMessage(),Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
+                        loaderDialog.dismiss();
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        loaderDialog.dismiss();
+                    }
+                });
     }
 
 

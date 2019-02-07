@@ -11,27 +11,35 @@ import android.widget.TextView;
 
 import com.gvtech.serviceathome.R;
 import com.gvtech.serviceathome.activities.user.BusinessDetailsActivity;
+import com.gvtech.serviceathome.models.ProfessionalDetailsModel;
 import com.gvtech.serviceathome.models.ServiceItem;
 import com.makeramen.roundedimageview.RoundedImageView;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProfessionalServiceAdapter extends RecyclerView.Adapter<ProfessionalServiceAdapter.MyViewHolder> {
 
-    private ArrayList<ServiceItem> services;
+    private List<ProfessionalDetailsModel.Services> services;
     private Context mContext;
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView txtName;
+        public TextView txtName,txtPrice,txtTime;
         public RoundedImageView imgThumb;
+        public ImageView imgEdit, imgDelete;
 
         public MyViewHolder(View view) {
             super(view);
-            txtName = (TextView) view.findViewById(R.id.txt_service_name);
             imgThumb = view.findViewById(R.id.riv_service_thumb);
+            txtName = (TextView) view.findViewById(R.id.txt_service_name);
+            txtPrice = (TextView) view.findViewById(R.id.txt_price);
+            txtTime = (TextView) view.findViewById(R.id.txt_time);
+            imgEdit =  view.findViewById(R.id.img_edit);
+            imgDelete =  view.findViewById(R.id.img_delete);
         }
     }
-    public ProfessionalServiceAdapter(Context context) {
-//        this.services = services;
+    public ProfessionalServiceAdapter(Context context, List<ProfessionalDetailsModel.Services> services) {
+        this.services = services;
         this.mContext = context;
     }
 
@@ -45,16 +53,26 @@ public class ProfessionalServiceAdapter extends RecyclerView.Adapter<Professiona
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        //holder.txtName.setText(services.get(position).getName());
+        holder.txtName.setText(services.get(position).getServiceName());
+        holder.txtPrice.setText(services.get(position).getPrice()+"");
+        holder.txtTime.setText(services.get(position).getDuration()+" min");
 
-        holder.itemView.setOnClickListener(v -> {
-//            Intent intent = new Intent(mContext,BusinessDetailsActivity.class);
-//            mContext.startActivity(intent);
+//        String url = services.get(position).getImage();
+//        if (url != null)
+//            if (!url.isEmpty()){
+//                Picasso.with(mContext).load(url).placeholder(R.drawable.placeholder).into(holder.imgThumb);
+//            }
+        holder.imgEdit.setOnClickListener(v -> {
+
         });
+        holder.imgDelete.setOnClickListener(v -> {
+
+        });
+
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return services.size();
     }
 }

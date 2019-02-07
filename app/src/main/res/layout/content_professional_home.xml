@@ -136,6 +136,114 @@
                         android:inputType="number"
                         android:textColor="@color/textColorWhite"
                         />
+
+
+                        <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:gravity="center"-->
+                        <!--android:weightSum="1">-->
+
+                        <!--<EditText-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="0.7"-->
+                        <!--android:focusableInTouchMode="true" />-->
+
+                        <!--<Button-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="0.3"-->
+                        <!--android:background="@drawable/button_bg_theme"-->
+                        <!--android:text="@string/lookup"-->
+                        <!--android:textColor="@color/whiteWhite" />-->
+                        <!--</LinearLayout>-->
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/txt_hint_address_one"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/edt_address_l_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textColor="@color/textColorWhite"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/txt_hint_address_two"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/edt_address_l_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textColor="@color/textColorWhite"
+                            />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/bodyColorWhite" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/txt_hint_address_three"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/edt_address_l_three"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textColor="@color/textColorWhite"
+                            />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/bodyColorWhite" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/txt_hint_city"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/edt_city"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textColor="@color/textColorWhite"
+                            />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/bodyColorWhite" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/txt_pincode"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/pin_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textColor="@color/textColorWhite"
+                            />
                 </LinearLayout>
 
                 <Button
@@ -261,160 +369,160 @@
 
         </android.support.v7.widget.CardView>
 
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_below="@id/card_personal_work"
-            app:cardCornerRadius="10dp">
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:layout_below="@id/card_personal_work"-->
+            <!--app:cardCornerRadius="10dp">-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="0dp">
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical"-->
+                <!--android:padding="0dp">-->
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/bodyColorDark"
-                    android:padding="10dp"
-                    android:text="@string/address_details"
-                    android:textAlignment="center"
-                    android:textColor="@color/textColorWhite"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="@color/bodyColorDark"-->
+                    <!--android:padding="10dp"-->
+                    <!--android:text="@string/address_details"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textColor="@color/textColorWhite"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:textStyle="bold" />-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:padding="10dp">-->
 
-                    <!--<LinearLayout-->
+                    <!--&lt;!&ndash;<LinearLayout&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:orientation="horizontal"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:gravity="center"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:weightSum="1">&ndash;&gt;-->
+
+                        <!--&lt;!&ndash;<EditText&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_width="0dp"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_weight="0.7"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:focusableInTouchMode="true" />&ndash;&gt;-->
+
+                        <!--&lt;!&ndash;<Button&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_width="0dp"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_weight="0.3"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:background="@drawable/button_bg_theme"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:text="@string/lookup"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:textColor="@color/whiteWhite" />&ndash;&gt;-->
+                    <!--&lt;!&ndash;</LinearLayout>&ndash;&gt;-->
+
+                    <!--<TextView-->
                         <!--android:layout_width="match_parent"-->
                         <!--android:layout_height="wrap_content"-->
-                        <!--android:orientation="horizontal"-->
-                        <!--android:gravity="center"-->
-                        <!--android:weightSum="1">-->
+                        <!--android:text="@string/txt_hint_address_one"-->
+                        <!--android:textSize="16sp" />-->
 
-                        <!--<EditText-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_weight="0.7"-->
-                            <!--android:focusableInTouchMode="true" />-->
+                    <!--<EditText-->
+                        <!--android:id="@+id/edt_address_l_one"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:padding="5dp"-->
+                        <!--android:textColor="@color/textColorWhite"-->
+                        <!--/>-->
 
-                        <!--<Button-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_weight="0.3"-->
-                            <!--android:background="@drawable/button_bg_theme"-->
-                            <!--android:text="@string/lookup"-->
-                            <!--android:textColor="@color/whiteWhite" />-->
-                    <!--</LinearLayout>-->
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="@string/txt_hint_address_two"-->
+                        <!--android:textSize="16sp" />-->
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/txt_hint_address_one"
-                        android:textSize="16sp" />
+                    <!--<EditText-->
+                        <!--android:id="@+id/edt_address_l_two"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:padding="5dp"-->
+                        <!--android:textColor="@color/textColorWhite"-->
+                        <!--/>-->
 
-                    <EditText
-                        android:id="@+id/edt_address_l_one"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:textColor="@color/textColorWhite"
-                        />
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:background="@color/bodyColorWhite" />-->
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/txt_hint_address_two"
-                        android:textSize="16sp" />
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="@string/txt_hint_address_three"-->
+                        <!--android:textSize="16sp" />-->
 
-                    <EditText
-                        android:id="@+id/edt_address_l_two"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:textColor="@color/textColorWhite"
-                        />
+                    <!--<EditText-->
+                        <!--android:id="@+id/edt_address_l_three"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:padding="5dp"-->
+                        <!--android:textColor="@color/textColorWhite"-->
+                        <!--/>-->
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/bodyColorWhite" />
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:background="@color/bodyColorWhite" />-->
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/txt_hint_address_three"
-                        android:textSize="16sp" />
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="@string/txt_hint_city"-->
+                        <!--android:textSize="16sp" />-->
 
-                    <EditText
-                        android:id="@+id/edt_address_l_three"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:textColor="@color/textColorWhite"
-                        />
+                    <!--<EditText-->
+                        <!--android:id="@+id/edt_city"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:padding="5dp"-->
+                        <!--android:textColor="@color/textColorWhite"-->
+                        <!--/>-->
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/bodyColorWhite" />
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:background="@color/bodyColorWhite" />-->
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/txt_hint_city"
-                        android:textSize="16sp" />
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="@string/txt_pincode"-->
+                        <!--android:textSize="16sp" />-->
 
-                    <EditText
-                        android:id="@+id/edt_city"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:textColor="@color/textColorWhite"
-                        />
+                    <!--<EditText-->
+                        <!--android:id="@+id/pin_code"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:padding="5dp"-->
+                        <!--android:textColor="@color/textColorWhite"-->
+                        <!--/>-->
+                <!--</LinearLayout>-->
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/bodyColorWhite" />
+                <!--<Button-->
+                    <!--android:id="@+id/btn_update_address"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="0.3"-->
+                    <!--android:background="@drawable/button_bg_theme"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:text="@string/update"-->
+                    <!--android:layout_marginBottom="50dp"-->
+                    <!--android:textColor="@color/whiteWhite" />-->
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/txt_pincode"
-                        android:textSize="16sp" />
+            <!--</LinearLayout>-->
 
-                    <EditText
-                        android:id="@+id/pin_code"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:textColor="@color/textColorWhite"
-                        />
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/btn_update_address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.3"
-                    android:background="@drawable/button_bg_theme"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:text="@string/update"
-                    android:layout_marginBottom="50dp"
-                    android:textColor="@color/whiteWhite" />
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
+        <!--</android.support.v7.widget.CardView>-->
 
     </RelativeLayout>
 

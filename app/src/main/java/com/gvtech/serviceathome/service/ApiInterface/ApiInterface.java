@@ -116,10 +116,42 @@ public interface ApiInterface {
                                                    @Field("currentpassword") String currentpassword,
                                                    @Field("newpassword") String newpassword);
 
-    // change user password
+    // get professional account details
     @FormUrlEncoded
     @Headers({"Content-Type:application/x-www-form-urlencoded"})
     @POST("getprofessionalaccount")
     Observable<ProfessionalDetailsModel> getProfessionalAccount(@Field("application") String application,
                                                    @Field("userid") int userid);
+
+
+    // update professional account details
+    @FormUrlEncoded
+    @Headers({"Content-Type:application/x-www-form-urlencoded"})
+    @POST("getprofessionalaccount")
+    Observable<ProfessionalDetailsModel> updateProfessionalAccount(@Field("application") String application,
+                                                                @Field("userid") int userid,
+                                                                @Field("firstname") String firstname,
+                                                                @Field("lastname") String lastname,
+                                                                @Field("phone") String phone,
+                                                                @Field("gmailid") String gmailid,
+                                                                @Field("address1") String address1,
+                                                                @Field("address2") String address2,
+                                                                @Field("address3") String address3,
+                                                                @Field("city") String city,
+                                                                @Field("postcode") String postcode,
+                                                                @Field("oldprofileimage") String oldprofileimage,
+                                                                @Field("oldcoverimage") String oldcoverimage);
+
+
+    // add Professional Service
+    @FormUrlEncoded
+    @Headers({"Content-Type:application/x-www-form-urlencoded"})
+    @POST("upsertprofessionalservice")
+    Observable<ProfessionalDetailsModel> addProfessionalService(@Field("application") String application,
+                                                                @Field("professionalid") int professionalid,
+                                                                @Field("id") int id,
+                                                                @Field("serviceid") int serviceid,
+                                                                @Field("duration") String duration,
+                                                                @Field("price") String price
+                                                                );
 }
